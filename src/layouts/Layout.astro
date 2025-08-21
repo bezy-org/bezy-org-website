@@ -16,11 +16,8 @@ const { title = "Bezy", description = "The Emacs of Font Editors" } = Astro.prop
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-white text-black font-mono antialiased">
+	<body class="bg-gray-100 text-black antialiased" style="font-family: Helvetica, Arial, sans-serif;">
 		<slot />
 	</body>
 </html>
