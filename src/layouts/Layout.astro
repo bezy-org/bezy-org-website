@@ -1,4 +1,6 @@
 ---
+import '../styles/fonts.css';
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -17,7 +19,9 @@ const { title = "Bezy", description = "The Emacs of Font Editors" } = Astro.prop
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-100 text-black antialiased" style="font-family: Helvetica, Arial, sans-serif;">
-		<slot />
+	<body class="bg-gray-200 text-black antialiased" style="font-family: 'Bezy Grotesk', Helvetica, Arial, sans-serif;">
+		<div class="border-4 border-black min-h-screen">
+			<slot />
+		</div>
 	</body>
 </html>

@@ -6,16 +6,14 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Header -->
 	<header class="border-b-4 border-black p-6">
 		<div class="flex justify-between items-center">
-			<h1 class="text-2xl font-bold uppercase">
-				BEZY
-			</h1>
+			<h1 class="text-3xl font-bold bezy-logo">Bezy</h1>
 			<a 
-				href="https://github.com/eliheuer/bezy" 
+				href="https://github.com/bezy-org/bezy" 
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-2xl font-bold uppercase underline hover:no-underline"
+				class="text-3xl font-bold underline hover:no-underline"
 			>
-				SOURCE CODE
+				Source Code
 			</a>
 		</div>
 	</header>
@@ -27,77 +25,50 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Left Column: Typography -->
 			<div class="p-6 flex flex-col justify-center space-y-8 border-r-0 lg:border-r-4 border-black">
 				<div>
-					<p class="text-2xl leading-normal mb-8 uppercase font-bold">
-						THE EMACS<br>
-						OF FONT<br>
-						EDITORS
+					<p class="text-3xl leading-tight mb-8 uppercase font-bold">
+						THE EMACS OF FONT EDITORS
 					</p>
-					<p class="text-2xl leading-normal mb-8">
+					<p class="text-3xl leading-normal mb-8">
 						User empowerment through deep customization and control.
 					</p>
 				</div>
 				
 				<div class="space-y-6">
 					<div class="border-l-4 border-black pl-6">
-						<p class="text-2xl font-bold uppercase mb-2">OPEN SOURCE</p>
-						<p class="text-2xl">Built with Rust and Bevy game engine. GPL licensed for maximum freedom.</p>
+						<p class="text-3xl font-bold uppercase mb-2">OPEN SOURCE</p>
+						<p class="text-3xl">Built with Rust and Bevy game engine. GPL licensed for maximum freedom.</p>
 					</div>
 					
 					<div class="border-l-4 border-black pl-6">
-						<p class="text-2xl font-bold uppercase mb-2">CROSS PLATFORM</p>
-						<p class="text-2xl">Works on desktop and web (WASM). UFO format as default source.</p>
+						<p class="text-3xl font-bold uppercase mb-2">CROSS PLATFORM</p>
+						<p class="text-3xl">Works on desktop and web (WASM). UFO format as default source.</p>
 					</div>
 					
 					<div class="border-l-4 border-black pl-6">
-						<p class="text-2xl font-bold uppercase mb-2">USER CONTROL</p>
-						<p class="text-2xl">Highly customizable editing tools. Fine-grained control over everything.</p>
+						<p class="text-3xl font-bold uppercase mb-2">USER CONTROL</p>
+						<p class="text-3xl">Highly customizable editing tools. Fine-grained control over everything.</p>
 					</div>
 				</div>
 
 				<div class="pt-8">
 					<div class="bg-black text-white p-4 mb-4">
-						<p class="text-2xl font-bold uppercase">⚠️ DEVELOPMENT STATUS</p>
+						<p class="text-3xl font-bold uppercase">⚠️ DEVELOPMENT STATUS</p>
 					</div>
-					<p class="text-2xl">
+					<p class="text-3xl">
 						This software is very raw, and is not yet suitable for use unless you want to learn the codebase.
 					</p>
 				</div>
 			</div>
 
-			<!-- Right Column: Visual Elements -->
-			<div class="p-6 flex flex-col justify-center items-center space-y-8 bg-white">
-				<div class="w-full max-w-md">
-					<div class="bg-black text-white p-8 mb-8">
-						<div class="text-2xl font-bold text-center mb-4">Aa</div>
-						<div class="text-center text-2xl uppercase">FONT PREVIEW</div>
-					</div>
-					
-					<div class="grid grid-cols-2 gap-4">
-						<div class="bg-white border-4 border-black p-4 aspect-square flex items-center justify-center">
-							<span class="text-2xl font-bold">A</span>
-						</div>
-						<div class="bg-white border-4 border-black p-4 aspect-square flex items-center justify-center">
-							<span class="text-2xl font-bold">a</span>
-						</div>
-						<div class="bg-black text-white p-4 aspect-square flex items-center justify-center">
-							<span class="text-2xl font-bold">B</span>
-						</div>
-						<div class="bg-black text-white p-4 aspect-square flex items-center justify-center">
-							<span class="text-2xl font-bold">b</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-full max-w-md space-y-4">
-					<div class="bg-white border-4 border-black p-4">
-						<p class="text-2xl font-bold uppercase mb-2">SUPPORTED FORMATS</p>
-						<p class="text-2xl">UFO • TTF • OTF • WOFF2</p>
-					</div>
-					
-					<div class="bg-white border-4 border-black p-4">
-						<p class="text-2xl font-bold uppercase mb-2">BUILT WITH</p>
-						<p class="text-2xl">RUST • BEVY • NORAD • KURBO</p>
-					</div>
+			<!-- Right Column: Screenshot Gallery -->
+			<div class="p-6 overflow-y-auto bg-white">
+				<div class="space-y-6">
+					<img src="/images/bezy-screenshot-001.png" alt="Bezy Editor Screenshot 1" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-002.png" alt="Bezy Editor Screenshot 2" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-003.png" alt="Bezy Editor Screenshot 3" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-004.png" alt="Bezy Editor Screenshot 4" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-005.png" alt="Bezy Editor Screenshot 5" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-006.png" alt="Bezy Editor Screenshot 6" class="w-full border-4 border-black" />
 				</div>
 			</div>
 		</section>
@@ -108,24 +79,24 @@ import Layout from '../layouts/Layout.astro';
 		<div class="p-6">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<div>
-					<p class="text-2xl font-bold uppercase mb-4">BEZY</p>
-					<p class="text-2xl">
+					<p class="text-3xl font-bold uppercase mb-4">BEZY</p>
+					<p class="text-3xl">
 						Open-source font editor for type designers and developers who want deep control over their tools.
 					</p>
 				</div>
 				
 				<div>
-					<p class="text-2xl font-bold uppercase mb-4">LINKS</p>
-					<ul class="space-y-2 text-2xl">
-						<li><a href="https://github.com/eliheuer/bezy" class="underline hover:no-underline">GitHub Repository</a></li>
-						<li><a href="https://github.com/eliheuer/bezy/issues" class="underline hover:no-underline">Report Issues</a></li>
-						<li><a href="https://github.com/eliheuer/bezy/discussions" class="underline hover:no-underline">Discussions</a></li>
+					<p class="text-3xl font-bold uppercase mb-4">LINKS</p>
+					<ul class="space-y-2 text-3xl">
+						<li><a href="https://github.com/bezy-org/bezy" class="underline hover:no-underline">GitHub Repository</a></li>
+						<li><a href="https://github.com/bezy-org/bezy/issues" class="underline hover:no-underline">Report Issues</a></li>
+						<li><a href="https://github.com/bezy-org/bezy/discussions" class="underline hover:no-underline">Discussions</a></li>
 					</ul>
 				</div>
 				
 				<div>
-					<p class="text-2xl font-bold uppercase mb-4">LICENSE</p>
-					<p class="text-2xl">
+					<p class="text-3xl font-bold uppercase mb-4">LICENSE</p>
+					<p class="text-3xl">
 						GPL License<br>
 						Free and Open Source<br>
 						Community Driven
@@ -134,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<div class="border-t border-white mt-8 pt-8 text-center">
-				<p class="text-2xl uppercase">
+				<p class="text-3xl uppercase">
 					© 2024 BEZY PROJECT • MADE FOR TYPE DESIGNERS
 				</p>
 			</div>
