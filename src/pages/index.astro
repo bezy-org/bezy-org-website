@@ -1,11 +1,143 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Bezy - The Emacs of Font Editors" description="Open-source, cross-platform font editor built with Rust and Bevy. User empowerment through deep customization and control.">
+	<!-- Header -->
+	<header class="border-b-4 border-black p-6">
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<h1 class="text-6xl md:text-8xl font-bold tracking-tighter uppercase">
+				BEZY
+			</h1>
+			<a 
+				href="https://github.com/eliheuer/bezy" 
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-xl md:text-2xl font-bold uppercase underline hover:no-underline transition-all"
+			>
+				SOURCE CODE
+			</a>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main class="max-w-7xl mx-auto">
+		<!-- Two Column Layout -->
+		<section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+			<!-- Left Column: Typography -->
+			<div class="p-6 lg:p-12 flex flex-col justify-center space-y-8 border-r-0 lg:border-r-4 border-black">
+				<div>
+					<h2 class="text-4xl md:text-6xl font-bold leading-tight uppercase mb-6">
+						THE EMACS<br>
+						OF FONT<br>
+						EDITORS
+					</h2>
+					<p class="text-xl md:text-2xl leading-relaxed mb-8">
+						User empowerment through deep customization and control.
+					</p>
+				</div>
+				
+				<div class="space-y-6">
+					<div class="border-l-4 border-black pl-6">
+						<h3 class="text-2xl font-bold uppercase mb-2">OPEN SOURCE</h3>
+						<p class="text-lg">Built with Rust and Bevy game engine. GPL licensed for maximum freedom.</p>
+					</div>
+					
+					<div class="border-l-4 border-black pl-6">
+						<h3 class="text-2xl font-bold uppercase mb-2">CROSS PLATFORM</h3>
+						<p class="text-lg">Works on desktop and web (WASM). UFO format as default source.</p>
+					</div>
+					
+					<div class="border-l-4 border-black pl-6">
+						<h3 class="text-2xl font-bold uppercase mb-2">USER CONTROL</h3>
+						<p class="text-lg">Highly customizable editing tools. Fine-grained control over everything.</p>
+					</div>
+				</div>
+
+				<div class="pt-8">
+					<div class="bg-black text-white p-4 mb-4">
+						<p class="text-sm font-bold uppercase">⚠️ DEVELOPMENT STATUS</p>
+					</div>
+					<p class="text-base">
+						This software is very raw, and is not yet suitable for use unless you want to learn the codebase.
+					</p>
+				</div>
+			</div>
+
+			<!-- Right Column: Visual Elements -->
+			<div class="p-6 lg:p-12 flex flex-col justify-center items-center space-y-8 bg-gray-50">
+				<div class="w-full max-w-md">
+					<div class="bg-black text-white p-8 mb-8">
+						<div class="text-6xl font-bold text-center mb-4">Aa</div>
+						<div class="text-center text-sm uppercase tracking-widest">FONT PREVIEW</div>
+					</div>
+					
+					<div class="grid grid-cols-2 gap-4">
+						<div class="bg-white border-4 border-black p-4 aspect-square flex items-center justify-center">
+							<span class="text-3xl font-bold">A</span>
+						</div>
+						<div class="bg-white border-4 border-black p-4 aspect-square flex items-center justify-center">
+							<span class="text-3xl font-bold">a</span>
+						</div>
+						<div class="bg-black text-white p-4 aspect-square flex items-center justify-center">
+							<span class="text-3xl font-bold">B</span>
+						</div>
+						<div class="bg-black text-white p-4 aspect-square flex items-center justify-center">
+							<span class="text-3xl font-bold">b</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-full max-w-md space-y-4">
+					<div class="bg-white border-4 border-black p-4">
+						<p class="text-xs font-bold uppercase mb-2">SUPPORTED FORMATS</p>
+						<p class="text-sm">UFO • TTF • OTF • WOFF2</p>
+					</div>
+					
+					<div class="bg-white border-4 border-black p-4">
+						<p class="text-xs font-bold uppercase mb-2">BUILT WITH</p>
+						<p class="text-sm">RUST • BEVY • NORAD • KURBO</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="border-t-4 border-black bg-black text-white">
+		<div class="max-w-7xl mx-auto p-6">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div>
+					<h3 class="text-2xl font-bold uppercase mb-4">BEZY</h3>
+					<p class="text-sm">
+						Open-source font editor for type designers and developers who want deep control over their tools.
+					</p>
+				</div>
+				
+				<div>
+					<h4 class="text-lg font-bold uppercase mb-4">LINKS</h4>
+					<ul class="space-y-2 text-sm">
+						<li><a href="https://github.com/eliheuer/bezy" class="underline hover:no-underline">GitHub Repository</a></li>
+						<li><a href="https://github.com/eliheuer/bezy/issues" class="underline hover:no-underline">Report Issues</a></li>
+						<li><a href="https://github.com/eliheuer/bezy/discussions" class="underline hover:no-underline">Discussions</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h4 class="text-lg font-bold uppercase mb-4">LICENSE</h4>
+					<p class="text-sm">
+						GPL License<br>
+						Free and Open Source<br>
+						Community Driven
+					</p>
+				</div>
+			</div>
+			
+			<div class="border-t border-white mt-8 pt-8 text-center">
+				<p class="text-xs uppercase tracking-widest">
+					© 2024 BEZY PROJECT • MADE FOR TYPE DESIGNERS
+				</p>
+			</div>
+		</div>
+	</footer>
 </Layout>

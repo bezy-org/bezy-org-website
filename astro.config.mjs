@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://bezy.org',
@@ -6,5 +7,6 @@ export default defineConfig({
   output: 'static',
   build: {
     assets: 'assets'
-  }
+  },
+  integrations: [tailwind()]
 });
