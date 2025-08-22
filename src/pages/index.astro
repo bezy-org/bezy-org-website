@@ -1,17 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Build ticker text
+let tickerText = 'BUY $elih';
+
+try {
+  // Try to fetch from DexScreener API
+  const response = await fetch('https://api.dexscreener.com/latest/dex/pairs/base/0x7ca26c4663860590c29a63c20cfc465b2dcd246b');
+  const data = await response.json();
+  if (data.pair && data.pair.priceUsd) {
+    const price = parseFloat(data.pair.priceUsd).toFixed(6);
+    tickerText = `BUY $elih • PRICE: $${price} USD`;
+  }
+} catch (error) {
+  // If we can't get the price, just show without price
+  console.log('Could not fetch $elih price');
+}
+
+// Add contract to ticker
+tickerText += ' • BASE CONTRACT: 0x7ca26c4663860590c29a63c20cfc465b2dcd246b';
 ---
 
 <Layout title="Bezy - The Emacs of Font Editors" description="Open-source, cross-platform font editor built with Rust and Bevy. User empowerment through deep customization and control.">
 	<!-- Header -->
 	<header class="border-b-4 border-black p-6">
 		<div class="flex justify-between items-center">
-			<h1 class="text-3xl font-bold bezy-logo">Bezy</h1>
+			<h1 class="text-2xl font-bold bezy-logo">Bezy</h1>
 			<a 
 				href="https://github.com/bezy-org/bezy" 
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-3xl font-bold underline hover:no-underline"
+				class="text-2xl font-bold underline hover:no-underline"
 			>
 				Source Code
 			</a>
@@ -22,53 +41,31 @@ import Layout from '../layouts/Layout.astro';
 	<main>
 		<!-- Two Column Layout -->
 		<section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-			<!-- Left Column: Typography -->
-			<div class="p-6 flex flex-col justify-center space-y-8 border-r-0 lg:border-r-4 border-black">
+      
+      <!-- Left Column: Typography -->
+			<div class="p-6 flex flex-col justify-start space-y-8 border-r-0 lg:border-r-4 border-black">
 				<div>
-					<p class="text-3xl leading-tight mb-8 uppercase font-bold">
-						THE EMACS OF FONT EDITORS
+					<p class="text-2xl leading-normal mb-8">
+          A next-gen, cross-platform, free & open-source font editor for global scripts. Built for customization, tool making, AI/human collaboration, education, and user empowerment.
 					</p>
-					<p class="text-3xl leading-normal mb-8">
-						User empowerment through deep customization and control.
+					<p class="text-2xl leading-normal mb-8">
+          Bezy is writen in the Rust programming language using the Bevy game engine and an ECS (entity component system) architecture. It relies heavaly libraries from the Linebender organization (Norad, Kurbo, etc) and started as a fork of Runebender. Right-to-left (RTL) support is provided by HarfRust, and FontC and FontIR from Google Fonts are used heavily.
 					</p>
-				</div>
-				
-				<div class="space-y-6">
-					<div class="border-l-4 border-black pl-6">
-						<p class="text-3xl font-bold uppercase mb-2">OPEN SOURCE</p>
-						<p class="text-3xl">Built with Rust and Bevy game engine. GPL licensed for maximum freedom.</p>
-					</div>
-					
-					<div class="border-l-4 border-black pl-6">
-						<p class="text-3xl font-bold uppercase mb-2">CROSS PLATFORM</p>
-						<p class="text-3xl">Works on desktop and web (WASM). UFO format as default source.</p>
-					</div>
-					
-					<div class="border-l-4 border-black pl-6">
-						<p class="text-3xl font-bold uppercase mb-2">USER CONTROL</p>
-						<p class="text-3xl">Highly customizable editing tools. Fine-grained control over everything.</p>
-					</div>
-				</div>
-
-				<div class="pt-8">
-					<div class="bg-black text-white p-4 mb-4">
-						<p class="text-3xl font-bold uppercase">⚠️ DEVELOPMENT STATUS</p>
-					</div>
-					<p class="text-3xl">
-						This software is very raw, and is not yet suitable for use unless you want to learn the codebase.
+					<p class="text-2xl leading-normal mb-8">
+          Bezy is writen in the Rust programming language using the Bevy game engine and an ECS (entity component system) architecture. It relies heavaly libraries from the Linebender organization (Norad, Kurbo, etc) and started as a fork of Runebender. Right-to-left (RTL) support is provided by HarfRust, and FontC and FontIR from Google Fonts are used heavily.
 					</p>
+					<p class="text-2xl leading-normal mb-8">
+          This project is an experement exploring way to build better coordination incentives and value capture for independent open-source development at the highest quality standards. We are expoloring the Ethereum ecosystem for this and the project currently has a Zora creator coin and pland for subscription-free micro payments on the Ethereum Base L2 for remote AI modle acess are in the works for 2026.
+          </p>
 				</div>
 			</div>
 
 			<!-- Right Column: Screenshot Gallery -->
-			<div class="p-6 overflow-y-auto bg-white">
+			<div class="p-6 overflow-y-auto">
 				<div class="space-y-6">
-					<img src="/images/bezy-screenshot-001.png" alt="Bezy Editor Screenshot 1" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-002.png" alt="Bezy Editor Screenshot 2" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-003.png" alt="Bezy Editor Screenshot 3" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-004.png" alt="Bezy Editor Screenshot 4" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-005.png" alt="Bezy Editor Screenshot 5" class="w-full border-4 border-black" />
 					<img src="/images/bezy-screenshot-006.png" alt="Bezy Editor Screenshot 6" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-005.png" alt="Bezy Editor Screenshot 5" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-004.png" alt="Bezy Editor Screenshot 4" class="w-full border-4 border-black" />
 				</div>
 			</div>
 		</section>
@@ -79,36 +76,61 @@ import Layout from '../layouts/Layout.astro';
 		<div class="p-6">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<div>
-					<p class="text-3xl font-bold uppercase mb-4">BEZY</p>
-					<p class="text-3xl">
-						Open-source font editor for type designers and developers who want deep control over their tools.
-					</p>
+					<p class="text-2xl font-bold uppercase mb-4">Typefaces</p>
+					<p class="text-2xl">
+          This site is typeset with Bezy Grotesk, the default demo font for the Bezy editor designed by Eli Heuer in 2025. 
+          </p>
 				</div>
 				
 				<div>
-					<p class="text-3xl font-bold uppercase mb-4">LINKS</p>
-					<ul class="space-y-2 text-3xl">
+					<p class="text-2xl font-bold uppercase mb-4">LINKS</p>
+					<ul class="space-y-2 text-2xl">
 						<li><a href="https://github.com/bezy-org/bezy" class="underline hover:no-underline">GitHub Repository</a></li>
 						<li><a href="https://github.com/bezy-org/bezy/issues" class="underline hover:no-underline">Report Issues</a></li>
 						<li><a href="https://github.com/bezy-org/bezy/discussions" class="underline hover:no-underline">Discussions</a></li>
+						<li><a href="https://zora.co/@bezycoin" class="underline hover:no-underline">Zora Coin</a></li>
 					</ul>
 				</div>
 				
 				<div>
-					<p class="text-3xl font-bold uppercase mb-4">LICENSE</p>
-					<p class="text-3xl">
-						GPL License<br>
-						Free and Open Source<br>
-						Community Driven
+					<p class="text-2xl font-bold uppercase mb-4">LICENSE</p>
+          <p class="text-2xl">
+            GPL v3.0<br>
+						GNU GENERAL PUBLIC LICENSE<br>
+						Version 3, 29 June 2007<br>
 					</p>
 				</div>
 			</div>
 			
-			<div class="border-t border-white mt-8 pt-8 text-center">
-				<p class="text-3xl uppercase">
-					© 2024 BEZY PROJECT • MADE FOR TYPE DESIGNERS
+			<div class="border-t-2 border-white -mx-6 mt-8 px-6 pt-8 text-center">
+				<p class="text-2xl uppercase">
+        © 2025 THE BEZY PROJECT - All ASSETS ARE COPYLEFT GPL, OFL, VPL
 				</p>
 			</div>
 		</div>
 	</footer>
+
+	<!-- Scrolling Ticker -->
+	<div class="bg-green-300 border-t-4 border-black overflow-hidden">
+		<div class="animate-scroll-left whitespace-nowrap py-3">
+			<span class="text-2xl font-bold inline-block px-8">
+				{tickerText} • {tickerText} • {tickerText} • {tickerText} •
+			</span>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	@keyframes scroll-left {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.animate-scroll-left {
+		animation: scroll-left 30s linear infinite;
+	}
+</style>
