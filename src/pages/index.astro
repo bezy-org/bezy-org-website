@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 // Build ticker text
-let tickerText = 'BUY $elih';
+let tickerText = 'SUPPORT INDEPENDENT FREE SOFTWARE BUY $BEZYCOIN';
 
 try {
   // Try to fetch from DexScreener API
@@ -10,7 +10,7 @@ try {
   const data = await response.json();
   if (data.pair && data.pair.priceUsd) {
     const price = parseFloat(data.pair.priceUsd).toFixed(6);
-    tickerText = `BUY $elih • PRICE: $${price} USD`;
+    tickerText = `SUPPORT INDEPENDENT FREE SOFTWARE BUY $BEZYCOIN • PRICE: $${price} USD`;
   }
 } catch (error) {
   // If we can't get the price, just show without price
@@ -21,16 +21,17 @@ try {
 tickerText += ' • BASE CONTRACT: 0x7ca26c4663860590c29a63c20cfc465b2dcd246b';
 ---
 
-<Layout title="Bezy - The Emacs of Font Editors" description="Open-source, cross-platform font editor built with Rust and Bevy. User empowerment through deep customization and control.">
-	<!-- Header -->
+<Layout title="Bezy - A next-gen, cross-platform, free & open-source font editor for global scripts." description="A font editor built with Rust and Bevy. User empowerment through deep customization and control.">
+
+  <!-- Header -->
 	<header class="border-b-4 border-black p-6">
-		<div class="flex justify-between items-center">
-			<h1 class="text-2xl font-bold bezy-logo">Bezy</h1>
+		<div class="flex justify-between items-baseline">
+			<h1 class="text-4xl font-bold bezy-logo">Bezy</h1>
 			<a 
 				href="https://github.com/bezy-org/bezy" 
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-2xl font-bold underline hover:no-underline"
+				class="text-4xl font-bold underline hover:no-underline"
 			>
 				Source Code
 			</a>
@@ -46,16 +47,25 @@ tickerText += ' • BASE CONTRACT: 0x7ca26c4663860590c29a63c20cfc465b2dcd246b';
 			<div class="p-6 flex flex-col justify-start space-y-8 border-r-0 lg:border-r-4 border-black">
 				<div>
 					<p class="text-2xl leading-normal mb-8">
-          A next-gen, cross-platform, free & open-source font editor for global scripts. Built for customization, tool making, AI/human collaboration, education, and user empowerment.
+          A next-gen, cross-platform, free & open-source font editor for global scripts.
 					</p>
 					<p class="text-2xl leading-normal mb-8">
-          Bezy is writen in the Rust programming language using the Bevy game engine and an ECS (entity component system) architecture. It relies heavaly libraries from the Linebender organization (Norad, Kurbo, etc) and started as a fork of Runebender. Right-to-left (RTL) support is provided by HarfRust, and FontC and FontIR from Google Fonts are used heavily.
+          This editor is a power tool for professional font production. A spiritual successor to RoboFont and FontForge, built for customization, human-AI collaboration, CLI-heavy professional workflows, and user empowerment.
 					</p>
 					<p class="text-2xl leading-normal mb-8">
-          Bezy is writen in the Rust programming language using the Bevy game engine and an ECS (entity component system) architecture. It relies heavaly libraries from the Linebender organization (Norad, Kurbo, etc) and started as a fork of Runebender. Right-to-left (RTL) support is provided by HarfRust, and FontC and FontIR from Google Fonts are used heavily.
-					</p>
+          Bezy is written in the Rust programming language using a game engine to create a performant, fun, aesthetic experience that keeps designers in a flow-state. Rust has great documentation, a friendly compiler with useful error messages, and top-notch tooling, and an integrated package manager and build tool. With help from AI tools like Claude Code and Gemini CLI, it can be easier to use than Python, don’t be intimidated if you are not an expert programmer, this application is designed for designers, students, and artists to be able to customize it and make their own tool. We believe programming is 21st century literacy and everyone should do it, there are no high-priest gigabrains discouraging you from touching the source code like other font editors.
+          </p>
 					<p class="text-2xl leading-normal mb-8">
-          This project is an experement exploring way to build better coordination incentives and value capture for independent open-source development at the highest quality standards. We are expoloring the Ethereum ecosystem for this and the project currently has a Zora creator coin and pland for subscription-free micro payments on the Ethereum Base L2 for remote AI modle acess are in the works for 2026.
+          If you spend a large amount of time with professional software like a font editor, it should be a limitless environment where you can learn and grow, not a prosumer walled garden where you are powerless to make meaningful modifications and understand how the software works.
+          </p>
+					<p class="text-2xl leading-normal mb-8">
+          This project is an experiment exploring ways to build better coordination incentives and value capture for independent free & open-source development at the highest quality standards. The world of libre graphics software like Blender, GIMP, and Inkscape has struggled to fully compete with proprietary alternatives, and we want to change that, specifically in education where we believe understanding how your tools work and feeling empowered to modify them is of the utmost importance. We are exploring the Ethereum ecosystem with this goal in mind and the project currently has a Zora creator coin, a ETH treasury, community bug bounties, and plans for subscription-free micro payments on the Ethereum Base L2 for remote AI model access are in the works for 2026.
+          </p>
+					<p class="text-2xl leading-normal mb-8">
+          We aim to be an open and welcoming community that values working in the open and sharing knowledge, contributors of all skill levels are welcome.
+          </p>
+					<p class="text-2xl leading-normal mb-8 text-gray-500">
+          “The enjoyment of one's tools is an essential ingredient of successful work.”<br>— Donald Knuth
           </p>
 				</div>
 			</div>
@@ -63,9 +73,9 @@ tickerText += ' • BASE CONTRACT: 0x7ca26c4663860590c29a63c20cfc465b2dcd246b';
 			<!-- Right Column: Screenshot Gallery -->
 			<div class="p-6 overflow-y-auto">
 				<div class="space-y-6">
-					<img src="/images/bezy-screenshot-006.png" alt="Bezy Editor Screenshot 6" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-005.png" alt="Bezy Editor Screenshot 5" class="w-full border-4 border-black" />
-					<img src="/images/bezy-screenshot-004.png" alt="Bezy Editor Screenshot 4" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-001.jpg" alt="Bezy Editor Screenshot 1" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-002.jpg" alt="Bezy Editor Screenshot 2" class="w-full border-4 border-black" />
+					<img src="/images/bezy-screenshot-003.jpg" alt="Bezy Editor Screenshot 3" class="w-full border-4 border-black" />
 				</div>
 			</div>
 		</section>
