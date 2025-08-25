@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 // Build ticker text
-let tickerText = 'SUPPORT INDEPENDENT FREE SOFTWARE BUY $BEZYCOIN';
+let tickerText = 'BUY $BEZYCOIN';
 
 try {
   // Try to fetch from DexScreener API
@@ -10,11 +10,11 @@ try {
   const data = await response.json();
   if (data.pair && data.pair.priceUsd) {
     const price = parseFloat(data.pair.priceUsd).toFixed(6);
-    tickerText = `SUPPORT INDEPENDENT FREE SOFTWARE BUY $BEZYCOIN • PRICE: $${price} USD`;
+    tickerText = `BUY $BEZYCOIN • PRICE: $${price} USD`;
   }
 } catch (error) {
   // If we can't get the price, just show without price
-  console.log('Could not fetch $elih price');
+  console.log('Could not fetch $BEZYCOIN price');
 }
 
 // Add contract to ticker
@@ -41,28 +41,28 @@ tickerText += ' • BASE CONTRACT: 0x40a10350be162faf13168ec55e8f4ea960e5582f';
 	<!-- Main Content -->
 	<main>
 		<!-- Two Column Layout -->
-		<section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+		<section class="grid grid-cols-1 lg:grid-cols-5 min-h-screen">
       
-      <!-- Left Column: Typography -->
-			<div class="p-6 flex flex-col justify-start space-y-8 border-r-0 lg:border-r-4 border-black">
+      <!-- Left Column: Typography (40%) -->
+			<div class="p-6 flex flex-col justify-start space-y-8 border-r-0 lg:border-r-4 border-black lg:col-span-2">
 				<div>
 					<p class="text-2xl leading-normal mb-8">
           A next-gen, cross-platform, free & open-source font editor for global scripts.
 					</p>
 					<p class="text-2xl leading-normal mb-8">
-          This editor is a power tool for professional font production. A spiritual successor to RoboFont and FontForge, built for customization, human-AI collaboration, CLI-heavy professional workflows, and user empowerment.
+          Built for customization, human-AI collaboration, CLI-heavy professional workflows, education, and user empowerment. This editor is a spiritual successor to the DIY ethos of RoboFont and FontForge, and the customization cultures of Vim, Emacs, Arch Linux, and tool making in traditional Arabic calligrapy. 
 					</p>
 					<p class="text-2xl leading-normal mb-8">
-          Bezy is written in the Rust programming language using a game engine to create a performant, fun, aesthetic experience that keeps designers in a flow-state. Rust has great documentation, a friendly compiler with useful error messages, and top-notch tooling, and an integrated package manager and build tool. With help from AI tools like Claude Code and Gemini CLI, it can be easier to use than Python, don’t be intimidated if you are not an expert programmer, this application is designed for designers, students, and artists to be able to customize it and make their own tool. We believe programming is 21st century literacy and everyone should do it, there are no high-priest gigabrains discouraging you from touching the source code like other font editors.
+          Bezy is written in the Rust programming language using a game engine to create a performant, fun and aesthetic experience that keeps designers in a flow state. Rust has great documentation, a friendly compiler with useful error messages, top-notch tooling, and an integrated package manager and build tool. With help from AI tools like Claude Code and Gemini CLI, it can be easier to use than Python. Don't be intimidated if you are not an expert programmer—this application is designed for students, designers, and artists to be able to customize it and make their own tools. We believe programming is 21st-century literacy and everyone should do it. There are no high-priest gigabrains discouraging you from touching the source code, this editor is designed from the ground up for user modifications and we belive everyone is capable of learning, understanding, and modifying their tools. For now, the only way to use the application is to compile it from source, this should be seen as an empowering learning opportunity, a design choice for user empowerment and learning.
           </p>
 					<p class="text-2xl leading-normal mb-8">
-          If you spend a large amount of time with professional software like a font editor, it should be a limitless environment where you can learn and grow, not a prosumer walled garden where you are powerless to make meaningful modifications and understand how the software works.
+          If you spend a large amount of time with professional software like a font editor, it should be a limitless environment where you can learn and grow, not a prosumer walled garden where you are powerless to make meaningful modifications and understand how the software works. If you create tools that people spend 4-5 hours on daily without any personal growth, you are robbing them of both time and learning opportunities, and time and knowledge are our most valuable assets.
           </p>
 					<p class="text-2xl leading-normal mb-8">
-          This project is an experiment exploring ways to build better coordination incentives and value capture for independent free & open-source development at the highest quality standards. The world of libre graphics software like Blender, GIMP, and Inkscape has struggled to fully compete with proprietary alternatives, and we want to change that, specifically in education where we believe understanding how your tools work and feeling empowered to modify them is of the utmost importance. We are exploring the Ethereum ecosystem with this goal in mind and the project currently has a Zora creator coin, a ETH treasury, community bug bounties, and plans for subscription-free micro payments on the Ethereum Base L2 for remote AI model access are in the works for 2026.
+          This project is an experiment exploring ways to build better coordination incentives and value capture for independent free & open-source development at the highest quality standards. The world of libre graphics software like Blender, GIMP, and Inkscape has struggled to fully compete with proprietary alternatives, and we want to change that, specifically in education where we believe understanding how your tools work and feeling empowered to modify them is of the utmost importance. We are exploring the Ethereum ecosystem with this goal in mind. The project currently has a Zora creator coin, an ETH treasury, community bug bounties (soon), and plans for subscription-free micropayments on the Ethereum Base L2 for remote AI model access are in the works for 2026.
           </p>
 					<p class="text-2xl leading-normal mb-8">
-          We aim to be an open and welcoming community that values working in the open and sharing knowledge, contributors of all skill levels are welcome.
+          We aim to be an open and welcoming community that values working in the open and sharing knowledge. Contributors of all skill levels are welcome.
           </p>
 					<p class="text-2xl leading-normal mb-8 text-gray-500">
           “The enjoyment of one's tools is an essential ingredient of successful work.”<br>— Donald Knuth
@@ -70,8 +70,8 @@ tickerText += ' • BASE CONTRACT: 0x40a10350be162faf13168ec55e8f4ea960e5582f';
 				</div>
 			</div>
 
-			<!-- Right Column: Screenshot Gallery -->
-			<div class="p-6 overflow-y-auto">
+			<!-- Right Column: Screenshot Gallery (60%) -->
+			<div class="p-6 overflow-y-auto lg:col-span-3">
 				<div class="space-y-6">
 					<img src="/images/bezy-screenshot-001.jpg" alt="Bezy Editor Screenshot 1" class="w-full border-4 border-black" />
 					<img src="/images/bezy-screenshot-002.jpg" alt="Bezy Editor Screenshot 2" class="w-full border-4 border-black" />
@@ -114,7 +114,7 @@ tickerText += ' • BASE CONTRACT: 0x40a10350be162faf13168ec55e8f4ea960e5582f';
 			
 			<div class="border-t-2 border-white -mx-6 mt-8 px-6 pt-8 text-center">
 				<p class="text-2xl uppercase">
-        © 2025 THE BEZY PROJECT - All ASSETS ARE COPYLEFT GPL, OFL, VPL
+        © 2025 THE BEZY PROJECT - ALL ASSETS ARE COPYLEFT GPL, OFL, VPL
 				</p>
 			</div>
 		</div>
